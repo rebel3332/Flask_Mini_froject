@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>На данном сайте зарегистрировано {{ users|length }} человек(а).</p>
+    {% if users|length >0 %}
+        <h3 align="left">Список героев:</h3>
+        {% for user in users %}
+        <li>{{ user.name }}</li>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+

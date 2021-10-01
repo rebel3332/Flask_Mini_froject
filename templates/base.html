@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Мини проект для курса Web-фреймворк Flask: введение">
+        <meta name="author" content="Мазунин Алексей">
+        <title> Мин ипроект для STEPIC 4.3</title>
+        <link href="static/bootstrap.css" rel="stylesheet">
+        <link href="static/jumbotron-narrow.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul  class="nav nav-pills pull-right">
+                        {% block menu %}
+                            <li role="presentation", class="active"><a href="/">Главная</a></li>
+                            <li role="presentation"><a href="/reg">Регистрация</a></li>
+                        {% endblock %}
+                    </ul>
+                </nav>
+                <table class="text-muted">
+                    <tr>
+                        <td>
+                            <img width="50" height="50" src="{{ url_for('static', filename='img/1.PNG') }}">
+                        </td>
+                        <td>
+                            <h3>Мини проект</h3>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+            <div class="jumbotron">
+                <ul class="text-left">
+                    {% block content %}
+                    {% endblock%}
+                </ul>
+            </div>
+
+            <footer class="footer">
+                {% block footer %}
+                    <P> ©2021 Мазуниным Алексеем для курса Web-фреймворк Flask.</P>
+                {% endblock %}
+            </footer>
+        </div>
+    </body>
+</html>
